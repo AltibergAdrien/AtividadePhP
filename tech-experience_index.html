@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscrição — Tech Experience 2026</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container">
+            <h1>Tech Experience 2026</h1>
+            <p>Inscrição nas Oficinas Técnicas de Desenvolvimento Web</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="card" aria-labelledby="form-title">
+            <h2 id="form-title">Formulário de Participação</h2>
+            <p class="subtitle">Preencha seus dados abaixo para garantir sua vaga nas oficinas práticas.</p>
+
+            <form id="form-inscricao" action="processar.php" method="post" novalidate>
+                <div class="form-group">
+                    <label for="nome">Nome completo <span aria-hidden="true">*</span></label>
+                    <input type="text" id="nome" name="nome" required minlength="3" placeholder="Ex: Ana Beatriz Silva">
+                    <span class="error-message" id="erro-nome" aria-live="polite"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-mail institucional ou pessoal <span aria-hidden="true">*</span></label>
+                    <input type="email" id="email" name="email" required placeholder="voce@exemplo.com">
+                    <span class="error-message" id="erro-email" aria-live="polite"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="experiencia">Nível de Experiência <span aria-hidden="true">*</span></label>
+                    <select id="experiencia" name="experiencia" required>
+                        <option value="">Selecione seu nível...</option>
+                        <option value="iniciante">Iniciante (Primeiros passos na Web)</option>
+                        <option value="intermediario">Intermediário (Já construo páginas e scripts)</option>
+                        <option value="avancado">Avançado (Experiência com arquitetura e APIs)</option>
+                    </select>
+                    <span class="error-message" id="erro-experiencia" aria-live="polite"></span>
+                </div>
+
+                <fieldset class="form-group">
+                    <legend>Turno de preferência <span aria-hidden="true">*</span></legend>
+                    <div class="options-group">
+                        <label class="option-item" for="turno-manha">
+                            <input type="radio" id="turno-manha" name="turno" value="manha" required>
+                            <span>Manhã (08h00 às 12h00)</span>
+                        </label>
+                        <label class="option-item" for="turno-noite">
+                            <input type="radio" id="turno-noite" name="turno" value="noite">
+                            <span>Noite (19h00 às 22h30)</span>
+                        </label>
+                    </div>
+                    <span class="error-message" id="erro-turno" aria-live="polite"></span>
+                </fieldset>
+
+                <fieldset class="form-group" id="grupo-oficinas">
+                    <legend>Oficinas de interesse (selecione ao menos uma) <span aria-hidden="true">*</span></legend>
+                    <div class="options-group">
+                        <label class="option-item" for="oficina-html-css">
+                            <input type="checkbox" id="oficina-html-css" name="oficinas[]" value="html_css">
+                            <span>HTML5 Semântico &amp; CSS3 Moderno</span>
+                        </label>
+                        <label class="option-item" for="oficina-js-dom">
+                            <input type="checkbox" id="oficina-js-dom" name="oficinas[]" value="js_dom">
+                            <span>JavaScript Interativo e Manipulação do DOM</span>
+                        </label>
+                        <label class="option-item" for="oficina-php-backend">
+                            <input type="checkbox" id="oficina-php-backend" name="oficinas[]" value="php_backend">
+                            <span>Back-end Seguro com PHP 8+</span>
+                        </label>
+                    </div>
+                    <span class="error-message" id="erro-oficinas" aria-live="polite"></span>
+                </fieldset>
+
+                <div class="form-group">
+                    <label for="mensagem">Mensagem / Motivação (opcional)</label>
+                    <textarea id="mensagem" name="mensagem" rows="4" maxlength="200"
+                        placeholder="Conte brevemente o que você espera aprender no evento..."></textarea>
+                    <div class="textarea-footer">
+                        <span id="contador-caracteres" class="char-counter">Restam 200 caracteres</span>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-primary">Confirmar Inscrição</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2026 Tech Experience — Evento Acadêmico de Tecnologia e Desenvolvimento Web.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
